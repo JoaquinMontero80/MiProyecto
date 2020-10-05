@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_diarios"
+            android:icon="@drawable/periodico"
+            android:title="@string/diarios" />
+        <item
+            android:id="@+id/nav_noticias"
+            android:icon="@drawable/noticias"
+            android:title="@string/noticias" />
+        <item
+            android:id="@+id/nav_configuracion"
+            android:icon="@drawable/setting"
+            android:title="@string/configuracion" />
+        <item
+            android:id="@+id/nav_acerca"
+            android:icon="@drawable/acerca"
+            android:title="@string/acerca" />
+    </group>
+</menu>

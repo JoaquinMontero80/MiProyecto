@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#070707">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.0sp"
+                android:layout_marginRight="16.0sp"
+                android:text="@string/generales"
+                android:textColor="#ED0D19"
+                android:textSize="34.0sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="8.0dip"
+                android:background="#BDB9B9"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewGenerales"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="20.0dip"
+                android:layout_marginRight="20.0dip"
+                android:layout_marginBottom="20.0dip"
+                android:background="#000000"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.0sp"
+                android:layout_marginRight="16.0sp"
+                android:text="@string/generales"
+                android:textColor="#ED0D19"
+                android:textSize="34.0sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="8.0dip"
+                android:background="#BDB9B9"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewRegionales"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="20.0dip"
+                android:layout_marginRight="20.0dip"
+                android:layout_marginBottom="20.0dip"
+                android:background="#FFFFFF"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.0sp"
+                android:layout_marginRight="16.0sp"
+                android:text="@string/deportes"
+                android:textColor="#ED0D19"
+                android:textSize="34.0sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="8.0dip"
+                android:background="#BDB9B9"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewDeportes"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="20.0dip"
+                android:layout_marginRight="20.0dip"
+                android:layout_marginBottom="20.0dip"
+                android:background="#FFFFFF"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.0sp"
+                android:layout_marginRight="16.0sp"
+                android:text="@string/deportes"
+                android:textColor="#ED0D19"
+                android:textSize="34.0sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="8.0dip"
+                android:background="#BDB9B9"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewDeportes2"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="20.0dip"
+                android:layout_marginRight="20.0dip"
+                android:layout_marginBottom="20.0dip"
+                android:background="#FFFFFF"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.0sp"
+                android:layout_marginRight="16.0sp"
+                android:text="@string/deportes"
+                android:textColor="#ED0D19"
+                android:textSize="34.0sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="8.0dip"
+                android:background="#BDB9B9"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewDeportes6"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="20.0dip"
+                android:layout_marginRight="20.0dip"
+                android:layout_marginBottom="20.0dip"
+                android:background="#FFFFFF"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.0sp"
+                android:layout_marginRight="16.0sp"
+                android:text="@string/deportes"
+                android:textColor="#ED0D19"
+                android:textSize="34.0sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="8.0dip"
+                android:background="#BDB9B9"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewDeportes3"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="20.0dip"
+                android:layout_marginRight="20.0dip"
+                android:layout_marginBottom="20.0dip"
+                android:background="#FFFFFF"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.0sp"
+                android:layout_marginRight="16.0sp"
+                android:text="@string/deportes"
+                android:textColor="#ED0D19"
+                android:textSize="34.0sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="8.0dip"
+                android:background="#BDB9B9"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewDeportes4"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="20.0dip"
+                android:layout_marginRight="20.0dip"
+                android:layout_marginBottom="20.0dip"
+                android:background="#FFFFFF"
+                android:orientation="horizontal" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

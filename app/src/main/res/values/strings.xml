@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MiProyecto</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nombreUsuario">Nombre de usuario</string>
+    <string name="correoUsuario">correo@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="texto_pantalla_principal">Diarios y noticias de España</string>
+    <string name="diarios">Diarios de España</string>
+    <string name="noticias">Noticias de España</string>
+    <string name="configuracion">Configuración</string>
+    <string name="acerca">Acerca de</string>
+
+    <string name="appbar_scrolling_view_behavior">com.google.android.materia.bottomsheet.BottomSheetBehavior</string>
+    <string name="welcome_news_title">Novedades</string>
+    <string name="welcome_news_next">Siguiente</string>
+    <string name="generales"><h1>Generales</h1></string>
+    <string name="regionales"><h1>Regionales</h1></string>
+    <string name="deportes"><h1>Deportes</h1></string>
+
+</resources>
