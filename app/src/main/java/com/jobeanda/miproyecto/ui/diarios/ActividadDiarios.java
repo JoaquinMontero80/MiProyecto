@@ -1,20 +1,22 @@
 package com.jobeanda.miproyecto.ui.diarios;
 
+
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.jobeanda.miproyecto.R;
-
 import java.util.ArrayList;
 
-public class ActividadDiarios extends AppCompatActivity {
+
+
+public class ActividadDiarios extends Fragment{
 
     // Usamos esta matriz dinámica (ArrayList) para guardar los datos de las 32 opciones del listado
     private ArrayList<Opcion> generales, regionales, deportes;
@@ -25,6 +27,100 @@ public class ActividadDiarios extends AppCompatActivity {
     private Button btnBorrar;
     private Button btnMover;
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View root = inflater.inflate(com.jobeanda.miproyecto.R.layout.fragment_diarios, container, false);
+
+        // Buscamos en el layout la lista RecyclerView
+        recViewGenerales = (RecyclerView) root.findViewById(R.id.recyclerviewGenerales);
+        recViewRegionales = (RecyclerView) root.findViewById(R.id.recyclerviewRegionales);
+        recViewDeportes= (RecyclerView) root.findViewById(R.id.recyclerviewDeportes);
+
+        // Indicamos que el tamaño del RecyclerView no cambia
+        recViewGenerales.setHasFixedSize(true);
+        recViewRegionales.setHasFixedSize(true);
+        recViewDeportes.setHasFixedSize(true);
+
+        // Se instancia el ArrayList de cada RecyclerView con las opciones
+        generales = new ArrayList<Opcion>();
+        regionales = new ArrayList<Opcion>();
+        deportes = new ArrayList<Opcion>();
+
+        añadirGenerales();
+        añadirRegionales();
+        añadirDeportes();
+
+        // Creamos el Adaptador que se usa para mostrar las opciones del listado
+        final AdaptadorOpciones adaptador = new AdaptadorOpciones(generales);
+        final AdaptadorOpciones adaptador2 = new AdaptadorOpciones(regionales);
+        final AdaptadorOpciones adaptador3 = new AdaptadorOpciones(deportes);
+
+        // Definimos el evento onClick del adaptador diarios generales
+        adaptador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Usamos el resultado de "getChildAdapterPosition()" para saber
+                // la posición de la opción sobre la que el usuario ha hecho clic.
+                Toast.makeText(getContext(), "Has hecho clic en '" + generales.get(recViewGenerales.getChildAdapterPosition(v)).getIcono()
+                        + "'", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        // Definimos el evento onClick del adaptador diarios regionales
+        adaptador2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Usamos el resultado de "getChildAdapterPosition()" para saber
+                // la posición de la opción sobre la que el usuario ha hecho clic.
+                Toast.makeText(getContext(), "Has hecho clic en '" + regionales.get(recViewGenerales.getChildAdapterPosition(v)).getIcono()
+                        + "'", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        // Definimos el evento onClick del adaptador diarios deportes
+        adaptador3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Usamos el resultado de "getChildAdapterPosition()" para saber
+                // la posición de la opción sobre la que el usuario ha hecho clic.
+                Toast.makeText(getContext(), "Has hecho clic en '" + deportes.get(recViewGenerales.getChildAdapterPosition(v)).getIcono()
+                        + "'", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+        // Asignamos el adaptador al RecyclerView para que sepa cómo dibujar el listado de opciones
+        recViewGenerales.setAdapter(adaptador);
+        // Asignamos el adaptador al RecyclerView para que sepa cómo dibujar el listado de opciones
+        recViewRegionales.setAdapter(adaptador2);
+        // Asignamos el adaptador al RecyclerView para que sepa cómo dibujar el listado de opciones
+        recViewDeportes.setAdapter(adaptador3);
+
+        // Muy importante indicar el tipo de Layout. ¡Obligatorio!!!
+        // PDF --> la clase RecyclerView no determina por sí
+        //misma la forma en la que se van a mostrar los elementos de datos, sino que delega esta funcionalidad
+        //a otra clase denominada LayoutManager, que debemos crear y asociar al RecyclerView para
+        //su correcto funcionamiento. Es muy importante hacerlo ya que si no, la aplicación mostrará un error,
+        //se cerrará y no funcionará bien.
+        recViewGenerales.setLayoutManager(new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false));
+        recViewRegionales.setLayoutManager(new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false));
+        recViewDeportes.setLayoutManager(new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false));
+
+        // Animador de la lista
+        recViewGenerales.setItemAnimator(new DefaultItemAnimator());
+        recViewRegionales.setItemAnimator(new DefaultItemAnimator());
+        recViewDeportes.setItemAnimator(new DefaultItemAnimator());
+
+        return root;
+
+
+    }
+  /*
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,7 +208,7 @@ public class ActividadDiarios extends AppCompatActivity {
         recViewGenerales.setItemAnimator(new DefaultItemAnimator());
         recViewRegionales.setItemAnimator(new DefaultItemAnimator());
         recViewDeportes.setItemAnimator(new DefaultItemAnimator());
-/*
+
         // Ahora definimos los eventos onClick de los botones
         btnInsertar = (Button) findViewById(R.id.BtnInsertar);
         // El botón insertar añade una nueva opción
@@ -158,9 +254,9 @@ public class ActividadDiarios extends AppCompatActivity {
                 adaptador.notifyItemMoved(1, 2);
             }
         });
-*/
-    }
 
+    }
+*/
     public void añadirGenerales()
     {
         generales.add(new Opcion(R.drawable.portada_el_paiss));
@@ -201,6 +297,5 @@ public class ActividadDiarios extends AppCompatActivity {
         generales.add(new Opcion(R.drawable.portada_europa_press));
         generales.add(new Opcion(R.drawable.portada_libertad_digital));
     }
-
 
 }
