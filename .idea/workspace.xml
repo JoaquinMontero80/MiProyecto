@@ -16,12 +16,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jobeanda/miproyecto/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jobeanda/miproyecto/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jobeanda/miproyecto/ui/diarios/ActividadDiarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jobeanda/miproyecto/ui/diarios/ActividadDiarios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/side_nav_bar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/side_nav_bar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,26 +201,26 @@
     </state>
     <state x="433" y="111" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1601619691070" />
     <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1601982819198" />
-    <state width="1317" height="6" key="GridCell.Tab.0.bottom" timestamp="1601996989360">
+    <state width="1317" height="437" key="GridCell.Tab.0.bottom" timestamp="1601998143429">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="593" height="162" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1601567466487" />
-    <state width="1317" height="6" key="GridCell.Tab.0.bottom/0.0.1360.728@0.0.1360.728" timestamp="1601996989360" />
-    <state width="1317" height="6" key="GridCell.Tab.0.center" timestamp="1601996989360">
+    <state width="1317" height="437" key="GridCell.Tab.0.bottom/0.0.1360.728@0.0.1360.728" timestamp="1601998143429" />
+    <state width="1317" height="437" key="GridCell.Tab.0.center" timestamp="1601998143428">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="593" height="162" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1601567466487" />
-    <state width="1317" height="6" key="GridCell.Tab.0.center/0.0.1360.728@0.0.1360.728" timestamp="1601996989360" />
-    <state width="1317" height="6" key="GridCell.Tab.0.left" timestamp="1601996989360">
+    <state width="1317" height="437" key="GridCell.Tab.0.center/0.0.1360.728@0.0.1360.728" timestamp="1601998143428" />
+    <state width="1317" height="437" key="GridCell.Tab.0.left" timestamp="1601998143428">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="593" height="162" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1601567466487" />
-    <state width="1317" height="6" key="GridCell.Tab.0.left/0.0.1360.728@0.0.1360.728" timestamp="1601996989360" />
-    <state width="1317" height="6" key="GridCell.Tab.0.right" timestamp="1601996989360">
+    <state width="1317" height="437" key="GridCell.Tab.0.left/0.0.1360.728@0.0.1360.728" timestamp="1601998143428" />
+    <state width="1317" height="437" key="GridCell.Tab.0.right" timestamp="1601998143429">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="593" height="162" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1601567466487" />
-    <state width="1317" height="6" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1601996989360" />
+    <state width="1317" height="437" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1601998143429" />
     <state width="1236" height="203" key="GridCell.Tab.1.bottom" timestamp="1601481699284">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

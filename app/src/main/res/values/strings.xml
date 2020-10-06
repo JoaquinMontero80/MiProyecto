@@ -2,7 +2,7 @@
     <string name="app_name">MiProyecto</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nombreUsuario">Nombre de usuario</string>
+    <string name="tituloMenu">Diarios y noticias de España</string>
     <string name="correoUsuario">correo@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
