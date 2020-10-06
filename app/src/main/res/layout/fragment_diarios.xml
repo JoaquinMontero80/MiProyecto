@@ -2,8 +2,10 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="#070707">
+    android:background="#070707"
+    tools:context=".ui.diarios.ActividadDiarios">
 
     <ScrollView
         android:layout_width="match_parent"

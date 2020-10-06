@@ -16,7 +16,7 @@
     <string name="configuracion">Configuración</string>
     <string name="acerca">Acerca de</string>
 
-    <string name="appbar_scrolling_view_behavior">com.google.android.materia.bottomsheet.BottomSheetBehavior</string>
+    <string name="appbar_scrolling_view_behavior">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
     <string name="welcome_news_title">Novedades</string>
     <string name="welcome_news_next">Siguiente</string>
     <string name="generales"><h1>Generales</h1></string>
