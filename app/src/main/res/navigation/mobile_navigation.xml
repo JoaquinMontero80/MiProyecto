@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/nav_noticias"
-        android:name="com.jobeanda.miproyecto.ui.noticias.NoticiasFragment"
+        android:name="com.jobeanda.miproyecto.ui.noticias.ActividadNoticias"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_noticias" />
 
