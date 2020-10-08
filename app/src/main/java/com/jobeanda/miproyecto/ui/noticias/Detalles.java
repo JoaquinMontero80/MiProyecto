@@ -32,9 +32,6 @@ public class Detalles extends AppCompatActivity
         // Carga
         webview.loadUrl(url);
 
-
-
-
     } // end onCreate
 
 } // Fin de clase

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -60,6 +61,7 @@ public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyView
         // Carga el enlace de la imagen
         Picasso.with(contexto).load(actual.getUrl_imagen()).into(holder.imagen);
 
+        // Cuando pincha boton ver noticia, abre la web en segundo plano
         holder.appcompatbutton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -86,6 +88,31 @@ public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyView
                 contexto.startActivity(intent);
             }
         });
+
+        // Cuando pulsa el boton de compartir, puede compartir la noticia con un Intent explicito
+        holder.botonCompartir.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                // Es necesario un intent que levante la actividad deseada
+                Intent sendIntent = new Intent();
+                // La accion es un envio a una aplicacion externa
+                sendIntent.setAction(Intent.ACTION_SEND);
+                // Enlace de la noticia que vamos a enviar
+                sendIntent.putExtra(Intent.EXTRA_TEXT, actual.getEnlace());
+                // Se va a enviar un texto plano
+                sendIntent.setType("text/plain");
+
+                // manda mensaje si no tiene aplicacion con la que compartir en el sistema
+                Intent shareIntent = Intent.createChooser(sendIntent, "no tengo aplicacion para compartir en emulador");
+                // Inicia la actividad compartir enlace de la noticia
+                contexto.startActivity(shareIntent);
+
+            }
+        });
+
+
     }
 
     // Devuelve el numero de noticias que tiene el ArrayList()
@@ -133,7 +160,7 @@ public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyView
     {
         // Referencia a las variables del CardView ( mostradas en RecyclerView )
         TextView titulo, descripcion, fecha;
-        ImageView imagen;
+        ImageView imagen, botonCompartir;
         AppCompatButton appcompatbutton;
 
         public MyViewHolder(@NonNull View itemView)
@@ -145,6 +172,7 @@ public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyView
             fecha = (TextView) itemView.findViewById(R.id.fecha);
             imagen = (ImageView) itemView.findViewById(R.id.imagen);
             appcompatbutton = (AppCompatButton)itemView.findViewById(R.id.appcompatbutton);
+            botonCompartir = (ImageButton) itemView.findViewById(R.id.botonCompartir);
         }
     }
 }

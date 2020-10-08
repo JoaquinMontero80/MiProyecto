@@ -10,8 +10,9 @@
     android:layout_marginRight="@dimen/spacing_middle"
     android:layout_marginTop="@dimen/spacing_medium"
     android:visibility="visible"
-    app:cardCornerRadius="20dp"
+    app:cardCornerRadius="50dp"
     app:cardElevation="20dp"
+    app:cardBackgroundColor="@color/purple_400"
     tools:context=".ui.noticias.ActividadNoticias">
 
     <LinearLayout
@@ -42,7 +43,8 @@
                     android:gravity="center_vertical"
                     android:text="@string/titulo"
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textColor="@android:color/holo_blue_dark" />
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/fecha"
@@ -51,8 +53,9 @@
                     android:layout_marginTop="@dimen/spacing_small"
                     android:gravity="center_vertical"
                     android:text="@string/fecha"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textColor="#99000000" />
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
 
             </LinearLayout>
 
@@ -86,16 +89,17 @@
                 android:layout_width="?attr/actionBarSize"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:tint="#99000000"
+                android:tint="#000000"
                 app:srcCompat="@drawable/ic_favorites"
                 tools:ignore="VectorDrawableCompat"
                 android:contentDescription="@string/nada" />
 
             <ImageButton
+                android:id="@+id/botonCompartir"
                 android:layout_width="?attr/actionBarSize"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:tint="#99000000"
+                android:tint="#000000"
                 app:srcCompat="@drawable/ic_share"
                 tools:ignore="VectorDrawableCompat"
                 android:contentDescription="@string/nada"/>
@@ -108,6 +112,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textSize="20dp"
+                android:textStyle="bold"
                 android:text="VER NOTICIA COMPLETA" />
 
 
