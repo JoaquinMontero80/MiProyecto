@@ -7,9 +7,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_home">Diarios de España</string>
+    <string name="menu_gallery">Noticias en vivo</string>
+    <string name="menu_slideshow">Configuración</string>
+    <string name="menu_acerca">Sobre nosotros</string>
     <string name="texto_pantalla_principal">Diarios y noticias de España</string>
     <string name="diarios">Diarios de España</string>
     <string name="noticias">Noticias de España</string>

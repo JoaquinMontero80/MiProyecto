@@ -8,11 +8,11 @@
     android:layout_marginBottom="@dimen/spacing_medium"
     android:layout_marginLeft="@dimen/spacing_middle"
     android:layout_marginRight="@dimen/spacing_middle"
-    android:layout_marginTop="@dimen/spacing_medium"
+    android:layout_marginTop="65dp"
     android:visibility="visible"
     app:cardCornerRadius="50dp"
     app:cardElevation="20dp"
-    app:cardBackgroundColor="@color/purple_400"
+    app:cardBackgroundColor="@color/light_green_50"
     tools:context=".ui.noticias.ActividadNoticias">
 
     <LinearLayout
@@ -43,7 +43,7 @@
                     android:gravity="center_vertical"
                     android:text="@string/titulo"
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/blue_A700"
                     android:textStyle="bold"/>
 
                 <TextView
