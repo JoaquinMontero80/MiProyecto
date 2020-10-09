@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.jobeanda.miproyecto.R;
 
+import java.net.URL;
 import java.util.List;
 
 
@@ -101,7 +102,6 @@ class OpcionViewHolder extends RecyclerView.ViewHolder
 	public OpcionViewHolder(View itemView)
 	{
 		super(itemView);
-
 		icono = (ImageView) itemView.findViewById(R.id.imageView);
 	}
 

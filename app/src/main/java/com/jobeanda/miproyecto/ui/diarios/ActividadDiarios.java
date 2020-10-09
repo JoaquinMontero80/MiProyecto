@@ -1,6 +1,6 @@
 package com.jobeanda.miproyecto.ui.diarios;
 
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.jobeanda.miproyecto.R;
+import com.jobeanda.miproyecto.ui.noticias.Detalles;
 import java.util.ArrayList;
-
 
 
 public class ActividadDiarios extends Fragment{
@@ -22,6 +22,9 @@ public class ActividadDiarios extends Fragment{
     private ArrayList<Opcion> generales, regionales, deportes;
     // Lista del tipo RecyclerView
     private RecyclerView recViewGenerales, recViewRegionales, recViewDeportes;
+
+    private int posClick;
+
     // Botones con las nuevas opciones
     private Button btnInsertar;
     private Button btnBorrar;
@@ -32,6 +35,8 @@ public class ActividadDiarios extends Fragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(com.jobeanda.miproyecto.R.layout.fragment_diarios, container, false);
+        // Creo una vista para tener acceso al layout fragment_noticias
+        final View vista = inflater.inflate(R.layout.activity_detalles, container, false);
 
         // Buscamos en el layout la lista RecyclerView
         recViewGenerales = (RecyclerView) root.findViewById(R.id.recyclerviewGenerales);
@@ -49,21 +54,47 @@ public class ActividadDiarios extends Fragment{
         deportes = new ArrayList<Opcion>();
 
         añadirGenerales();
-        añadirRegionales();
-        añadirDeportes();
+       // añadirRegionales();
+       // añadirDeportes();
 
         // Creamos el Adaptador que se usa para mostrar las opciones del listado
         final AdaptadorOpciones adaptador = new AdaptadorOpciones(generales);
         final AdaptadorOpciones adaptador2 = new AdaptadorOpciones(regionales);
         final AdaptadorOpciones adaptador3 = new AdaptadorOpciones(deportes);
 
+
+
         // Definimos el evento onClick del adaptador diarios generales
         adaptador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // Como el RecyclerView no devuelve en el método
+                // onContextItemSelected() la posición del elemento sobre
+                // el que se ha hecho clic, guardamos aquí la posición
+                // para usarlo posteriomente en onContextItemSelected().
+                posClick=recViewGenerales.getChildAdapterPosition(v);
+                // Obtiene la noticia que tiene el constructor
+                final Opcion actual = generales.get(posClick);
+
+
+                switch(posClick)
+                {
+                    case 0:
+                        // Carga la nueva actividad ( clase Detalles  )
+                        Intent intent = new Intent(vista.getContext(), Detalles.class);
+                        // Enlace a la web de la noticia
+                        intent.putExtra(ConstantesDiarios.URL_20MINUTOS, actual.getIcono());
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + posClick);
+                }
                 // Usamos el resultado de "getChildAdapterPosition()" para saber
                 // la posición de la opción sobre la que el usuario ha hecho clic.
-                Toast.makeText(getContext(), "Has hecho clic en '" + generales.get(recViewGenerales.getChildAdapterPosition(v)).getIcono()
+                Toast.makeText(getContext(), "Has hecho clic en '" + posClick
                         + "'", Toast.LENGTH_SHORT).show();
 
             }
@@ -270,6 +301,7 @@ public class ActividadDiarios extends Fragment{
         generales.add(new Opcion(R.drawable.portada_europa_press));
         generales.add(new Opcion(R.drawable.portada_libertad_digital));
     }
+    /*
     public void añadirRegionales()
     {
         generales.add(new Opcion(R.drawable.portada_el_paiss));
@@ -297,5 +329,5 @@ public class ActividadDiarios extends Fragment{
         generales.add(new Opcion(R.drawable.portada_europa_press));
         generales.add(new Opcion(R.drawable.portada_libertad_digital));
     }
-
+*/
 }

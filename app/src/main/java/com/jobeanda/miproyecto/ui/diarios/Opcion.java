@@ -5,6 +5,12 @@ public class Opcion
 {
 	// Cada opción tiene un título, un subtítulo y un icono
 	private int icono;
+	private String url_imagen;
+
+	public Opcion(int icono, String url_imagen) {
+		this.icono = icono;
+		this.url_imagen = url_imagen;
+	}
 
 	// Constructor
 	public Opcion(int icono)
@@ -20,4 +26,11 @@ public class Opcion
 		this.icono = icono;
 	}
 
+	public String getUrl_imagen() {
+		return url_imagen;
+	}
+
+	public void setUrl_imagen(String url_imagen) {
+		this.url_imagen = url_imagen;
+	}
 }
