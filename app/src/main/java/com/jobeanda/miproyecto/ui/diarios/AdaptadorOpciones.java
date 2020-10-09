@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.jobeanda.miproyecto.R;
 
-import java.net.URL;
 import java.util.List;
 
 
@@ -19,16 +18,16 @@ import java.util.List;
 class AdaptadorOpciones extends RecyclerView.Adapter<OpcionViewHolder> implements View.OnClickListener
 {
 	// Matriz dinámica para guardar los datos
-	private List<Opcion> datos;
+	private List<Opcion> generales;
 	// Variable para guardar el puntero al método onClick para llamarlo cuando sea necesario
 	private View.OnClickListener listener;
 
 	// Contructor del adaptador usando una matriz dinámica del tipo Opcion
-	AdaptadorOpciones(List<Opcion> datos)
+	AdaptadorOpciones(List<Opcion> generales)
 	{
 		// ¡OJO! NO es necesario invocar al constructor de la clase superior
 		// Guardamos estas variables de la aplicación principal para usarlas luego
-		this.datos = datos;
+		this.generales = generales;
 	}
 
 	/*
@@ -58,6 +57,7 @@ class AdaptadorOpciones extends RecyclerView.Adapter<OpcionViewHolder> implement
 		OpcionViewHolder ovh = new OpcionViewHolder(itemView);
 		// Devolvemos ya la opción dentro la clase OpcionViewHolder
 		return ovh;
+
 	}
 
 
@@ -66,7 +66,7 @@ class AdaptadorOpciones extends RecyclerView.Adapter<OpcionViewHolder> implement
 	public void onBindViewHolder(OpcionViewHolder viewHolder, int pos)
 	{
 		// Simplemente optenemos los datos en esa posición
-		Opcion item = datos.get(pos);
+		Opcion item = generales.get(pos);
 		// Añadimos (bind=ligamos) al ViewHolder los datos
 		viewHolder.bindOpcion(item);
 	}
@@ -74,7 +74,7 @@ class AdaptadorOpciones extends RecyclerView.Adapter<OpcionViewHolder> implement
 	// Devuelve el nº de elementos de la lista
 	@Override
 	public int getItemCount() {
-		return datos.size();
+		return generales.size();
 	}
 	
 	// Método para establecer el evento onClick de la lista
@@ -93,6 +93,7 @@ class AdaptadorOpciones extends RecyclerView.Adapter<OpcionViewHolder> implement
 
 } // end class AdaptadorOpciones
 
+//==============================================================================================================
 
 // Clase que se usa para almacenar las 2 etiquetas de tipo TextView y un icono de tipo ImageView de una opción
 class OpcionViewHolder extends RecyclerView.ViewHolder
@@ -102,7 +103,8 @@ class OpcionViewHolder extends RecyclerView.ViewHolder
 	public OpcionViewHolder(View itemView)
 	{
 		super(itemView);
-		icono = (ImageView) itemView.findViewById(R.id.imageView);
+		icono = (ImageView) itemView.findViewById(R.id.imagenDiario);
+
 	}
 
 	public void bindOpcion(Opcion t)
@@ -111,5 +113,4 @@ class OpcionViewHolder extends RecyclerView.ViewHolder
 	}
 
 } // Fin clase OpcionViewHolder
-
 

@@ -2,6 +2,7 @@ package com.jobeanda.miproyecto.ui.noticias;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -168,6 +169,7 @@ public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyView
             super(itemView);
             // Busca en R cada id ( hay que pasarle el itemView de la vista del Layout que recibe la clase como parametro
             titulo = (TextView) itemView.findViewById(R.id.titulo);
+
            // descripcion = (TextView) itemView.findViewById(R.id.descripcion);
             fecha = (TextView) itemView.findViewById(R.id.fecha);
             imagen = (ImageView) itemView.findViewById(R.id.imagen);

@@ -22,7 +22,11 @@
     <string name="welcome_news_next">Siguiente</string>
     <string name="generales"><h1>Generales</h1></string>
     <string name="regionales"><h1>Regionales</h1></string>
+    <string name="economia"><h1>Economía y política</h1></string>
     <string name="deportes"><h1>Deportes</h1></string>
+    <string name="tecnologia"><h1>Tecnología</h1></string>
+    <string name="celebridades"><h1>Celebridades</h1></string>
+    <string name="moda"><h1>Moda</h1></string>
 
 
     <string name="title_activity_detalles">Detalles</string>
