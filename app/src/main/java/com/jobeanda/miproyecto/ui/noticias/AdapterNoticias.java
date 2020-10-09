@@ -33,7 +33,7 @@ public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyView
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Creo una vista para tener acceso al layout item_noticias
+        // Creo una vista para tener acceso al layout fragment_noticias
         View view = LayoutInflater.from(contexto).inflate(R.layout.fragment_noticias, parent, false);
         // Instancio el ViewHolder
         MyViewHolder holder = new MyViewHolder(view);

@@ -22,5 +22,8 @@
         <item name="android:textColor">@color/red_A700</item>
     </style>
 
+    <style name="TextAppearance.Subhead.Bold" parent="@style/TextAppearance.AppCompat.Subhead">
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>

@@ -1,18 +1,16 @@
 package com.jobeanda.miproyecto;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-
 import com.google.android.material.tabs.TabLayout;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +19,14 @@ public class TableLayout extends AppCompatActivity
 {
     private ViewPager view_pager;
     private TabLayout tab_layout;
+    Context context;
+
+    // Constructor de la clase
+    public TableLayout(Context context, ViewPager view_pager, TabLayout tab_layout) {
+        this.context = context;
+        this.view_pager = view_pager;
+        this.tab_layout = tab_layout;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +36,7 @@ public class TableLayout extends AppCompatActivity
 
     }
 
-    private void iniciaComponente() {
+    public void iniciaComponente() {
         view_pager = (ViewPager) findViewById(R.id.view_pager);
         setupViewPager(view_pager);
 
@@ -38,7 +44,7 @@ public class TableLayout extends AppCompatActivity
         tab_layout.setupWithViewPager(view_pager);
     }
 
-    private void setupViewPager(ViewPager viewPager) {
+    public void setupViewPager(ViewPager viewPager) {
         SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new FragmentTabsStore(), "GENERALES");
         adapter.addFragment(new FragmentTabsStore(), "DEPORTES");
@@ -49,7 +55,7 @@ public class TableLayout extends AppCompatActivity
     }
 
 
-    private class SectionsPagerAdapter extends FragmentPagerAdapter {
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
