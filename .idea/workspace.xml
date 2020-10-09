@@ -82,21 +82,22 @@
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\joaquin\Desktop\AndroidStudioProjects\Accenture\MiProyecto\app\src\main\res\drawable-v24" />
-      <recent name="C:\Users\joaquin\Desktop\AndroidStudioProjects\Accenture\MiProyecto\app\src\main\java\com\jobeanda\miproyecto\ui\noticias" />
-      <recent name="C:\Users\joaquin\Desktop\AndroidStudioProjects\Accenture\MiProyecto\app\src\main\res\layout" />
-      <recent name="C:\Users\joaquin\Desktop\AndroidStudioProjects\Accenture\MiProyecto\app\src\main\res\drawable" />
-      <recent name="C:\Users\joaquin\Desktop\AndroidStudioProjects\Accenture\MiProyecto\app\src\main\java\com\jobeanda\miproyecto\ui\diarios" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.jobeanda.miproyecto.ui.diarios" />
-      <recent name="com.jobeanda.miproyecto.ui" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\joaquin\Desktop\AndroidStudioProjects\Accenture\MiProyecto\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\joaquin\Desktop\AndroidStudioProjects\Accenture\MiProyecto\app\src\main\res\values" />
       <recent name="C:\Users\j.montero.martinez\Desktop\Android\MiProyecto\app\src\main\java\com\jobeanda\miproyecto\ui" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.jobeanda.miproyecto" />
+      <recent name="com.jobeanda.miproyecto.ui.diarios" />
+      <recent name="com.jobeanda.miproyecto.ui" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\joaquin\Desktop\AndroidStudioProjects\Accenture\MiProyecto\app\src\main\res\layout" />
+      <recent name="C:\Users\joaquin\Desktop\AndroidStudioProjects\Accenture\MiProyecto\app\src\main\res\drawable-v24" />
+      <recent name="C:\Users\joaquin\Desktop\AndroidStudioProjects\Accenture\MiProyecto\app\src\main\java\com\jobeanda\miproyecto\ui\noticias" />
+      <recent name="C:\Users\joaquin\Desktop\AndroidStudioProjects\Accenture\MiProyecto\app\src\main\res\drawable" />
+      <recent name="C:\Users\joaquin\Desktop\AndroidStudioProjects\Accenture\MiProyecto\app\src\main\java\com\jobeanda\miproyecto\ui\diarios" />
     </key>
   </component>
   <component name="RunManager">
