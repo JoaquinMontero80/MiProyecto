@@ -1,6 +1,8 @@
 package com.jobeanda.miproyecto.ui.diarios;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,43 +64,10 @@ public class ActividadDiarios extends Fragment{
         final AdaptadorOpciones adaptador2 = new AdaptadorOpciones(regionales);
         final AdaptadorOpciones adaptador3 = new AdaptadorOpciones(deportes);
 
+        abreWebDiarios(adaptador);
+        abreWebDiarios2(adaptador2);
+        abreWebDiarios3(adaptador3);
 
-
-        // Definimos el evento onClick del adaptador diarios generales
-        adaptador.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // Como el RecyclerView no devuelve en el método
-                // onContextItemSelected() la posición del elemento sobre
-                // el que se ha hecho clic, guardamos aquí la posición
-                // para usarlo posteriomente en onContextItemSelected().
-                posClick=recViewGenerales.getChildAdapterPosition(v);
-                // Obtiene la noticia que tiene el constructor
-                final Opcion actual = generales.get(posClick);
-
-
-                switch(posClick)
-                {
-                    case 0:
-                        // Carga la nueva actividad ( clase Detalles  )
-                        Intent intent = new Intent(vista.getContext(), Detalles.class);
-                        // Enlace a la web de la noticia
-                        intent.putExtra(ConstantesDiarios.URL_20MINUTOS, actual.getIcono());
-                        startActivity(intent);
-                        break;
-                    case 1:
-                        break;
-                    default:
-                        throw new IllegalStateException("Unexpected value: " + posClick);
-                }
-                // Usamos el resultado de "getChildAdapterPosition()" para saber
-                // la posición de la opción sobre la que el usuario ha hecho clic.
-                Toast.makeText(getContext(), "Has hecho clic en '" + posClick
-                        + "'", Toast.LENGTH_SHORT).show();
-
-            }
-        });
 
         // Definimos el evento onClick del adaptador diarios regionales
         adaptador2.setOnClickListener(new View.OnClickListener() {
@@ -330,4 +299,83 @@ public class ActividadDiarios extends Fragment{
         generales.add(new Opcion(R.drawable.portada_libertad_digital));
     }
 */
+    public void abreWebDiarios(AdaptadorOpciones a)
+    {
+        // Definimos el evento onClick del adaptador diarios generales
+        a.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch(posClick)
+                {
+                    case 0:
+                        Uri uri = Uri.parse(ConstantesDiarios.URL_ELPAIS);
+                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(intent);
+           /*             // Carga la nueva actividad ( activity_detalles.xml / clase Detalles  )
+                        Intent intent = new Intent(vista.getContext(), Detalles.class);
+                        // Enlace a la web de la noticia
+                        intent.putExtra(ConstantesDiarios.URL_ELPAIS, actual.getUrl_imagen());
+                        startActivity(intent);
+
+            */
+                        break;
+                    case 1:
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + posClick);
+                }
+                // Usamos el resultado de "getChildAdapterPosition()" para saber
+                // la posición de la opción sobre la que el usuario ha hecho clic.
+           /*     Toast.makeText(getContext(), "Has hecho clic en '" + posClick
+                        + "'", Toast.LENGTH_SHORT).show();
+*/
+            }
+        });
+    };
+
+    public void abreWebDiarios2(AdaptadorOpciones a)
+    {
+        // Definimos el evento onClick del adaptador diarios generales
+        a.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch(posClick)
+                {
+                    case 0:
+                        Uri uri = Uri.parse(ConstantesDiarios.URL_ELPAIS);
+                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + posClick);
+                }
+            }
+        });
+    };
+
+    public void abreWebDiarios3(AdaptadorOpciones a)
+    {
+        // Definimos el evento onClick del adaptador diarios generales
+        a.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch(posClick)
+                {
+                    case 0:
+                        Uri uri = Uri.parse(ConstantesDiarios.URL_ELPAIS);
+                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + posClick);
+                }
+            }
+        });
+    };
+
+
 }
