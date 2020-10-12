@@ -11,9 +11,9 @@
         android:id="@+id/imagenDiario"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_marginLeft="10.0dip"
-        android:layout_marginStart="10.0dip"
-        android:background="@color/teal_500"
+        android:layout_marginLeft="18.0dip"
+        android:layout_marginStart="18.0dip"
+        android:background="#FFFFFF"
         android:layout_gravity="fill_vertical"
         android:contentDescription="@string/acerca" />
 

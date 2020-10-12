@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/blue_grey_800_overlay"
+    android:background="@color/overlay_dark_90"
     tools:context=".ui.diarios.ActividadDiarios">
 
     <ScrollView
@@ -24,14 +24,14 @@
                 android:layout_marginLeft="16.0sp"
                 android:layout_marginRight="16.0sp"
                 android:text="@string/generales"
-                android:textColor="@color/red_400"
+                android:textColor="#FFFFFF"
                 android:textSize="34.0sp"
                 android:textStyle="bold" />
 
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="3.0dip"
-                android:background="#BDB9B9"/>
+                android:background="#FFFFFF"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerviewGenerales"
@@ -39,7 +39,7 @@
                 android:layout_height="110dp"
                 android:layout_marginTop="20.0dip"
                 android:layout_marginBottom="20.0dip"
-                android:background="@color/overlay_light_90"
+                android:background="@color/overlay_dark_90"
                 android:orientation="horizontal" />
 
             <TextView
@@ -48,14 +48,14 @@
                 android:layout_marginLeft="16.0sp"
                 android:layout_marginRight="16.0sp"
                 android:text="@string/regionales"
-                android:textColor="@color/red_400"
+                android:textColor="#FFFFFF"
                 android:textSize="34.0sp"
                 android:textStyle="bold" />
 
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="3.0dip"
-                android:background="#BDB9B9"/>
+                android:background="#FFFFFF"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerviewRegionales"
@@ -63,7 +63,7 @@
                 android:layout_height="110dp"
                 android:layout_marginTop="20.0dip"
                 android:layout_marginBottom="20.0dip"
-                android:background="@color/overlay_light_90"
+                android:background="@color/overlay_dark_90"
                 android:orientation="horizontal" />
 
             <TextView
@@ -72,14 +72,14 @@
                 android:layout_marginLeft="16.0sp"
                 android:layout_marginRight="16.0sp"
                 android:text="@string/economia"
-                android:textColor="@color/red_400"
+                android:textColor="#FFFFFF"
                 android:textSize="34.0sp"
                 android:textStyle="bold" />
 
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="3.0dip"
-                android:background="#BDB9B9"/>
+                android:background="#FFFFFF"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerviewEconomia"
@@ -87,7 +87,7 @@
                 android:layout_height="110dp"
                 android:layout_marginTop="20.0dip"
                 android:layout_marginBottom="20.0dip"
-                android:background="@color/overlay_light_90"
+                android:background="@color/overlay_dark_90"
                 android:orientation="horizontal" />
 
             <TextView
@@ -96,14 +96,14 @@
                 android:layout_marginLeft="16.0sp"
                 android:layout_marginRight="16.0sp"
                 android:text="@string/deportes"
-                android:textColor="@color/red_400"
+                android:textColor="#FFFFFF"
                 android:textSize="34.0sp"
                 android:textStyle="bold" />
 
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="3.0dip"
-                android:background="#BDB9B9"/>
+                android:background="#FFFFFF"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerviewDeportes"
@@ -111,7 +111,7 @@
                 android:layout_height="110dp"
                 android:layout_marginTop="20.0dip"
                 android:layout_marginBottom="20.0dip"
-                android:background="@color/overlay_light_90"
+                android:background="@color/overlay_dark_90"
                 android:orientation="horizontal" />
 
             <TextView
@@ -120,14 +120,14 @@
                 android:layout_marginLeft="16.0sp"
                 android:layout_marginRight="16.0sp"
                 android:text="@string/tecnologia"
-                android:textColor="@color/red_400"
+                android:textColor="#FFFFFF"
                 android:textSize="34.0sp"
                 android:textStyle="bold" />
 
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="3.0dip"
-                android:background="#BDB9B9"/>
+                android:background="#FFFFFF"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerviewTecnologia"
@@ -135,7 +135,7 @@
                 android:layout_height="110dp"
                 android:layout_marginTop="20.0dip"
                 android:layout_marginBottom="20.0dip"
-                android:background="@color/overlay_light_90"
+                android:background="@color/overlay_dark_90"
                 android:orientation="horizontal" />
 
             <TextView
@@ -144,14 +144,14 @@
                 android:layout_marginLeft="16.0sp"
                 android:layout_marginRight="16.0sp"
                 android:text="@string/celebridades"
-                android:textColor="@color/red_400"
+                android:textColor="#FFFFFF"
                 android:textSize="34.0sp"
                 android:textStyle="bold" />
 
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="3.0dip"
-                android:background="#BDB9B9"/>
+                android:background="#FFFFFF"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerviewCelebridades"
@@ -159,7 +159,7 @@
                 android:layout_height="110dp"
                 android:layout_marginTop="20.0dip"
                 android:layout_marginBottom="20.0dip"
-                android:background="@color/overlay_light_90"
+                android:background="@color/overlay_dark_90"
                 android:orientation="horizontal" />
 
             <TextView
@@ -168,14 +168,14 @@
                 android:layout_marginLeft="16.0sp"
                 android:layout_marginRight="16.0sp"
                 android:text="@string/moda"
-                android:textColor="@color/red_400"
+                android:textColor="#FFFFFF"
                 android:textSize="34.0sp"
                 android:textStyle="bold" />
 
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="3.0dip"
-                android:background="#BDB9B9"/>
+                android:background="#FFFFFF"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerviewModa"
@@ -183,7 +183,7 @@
                 android:layout_height="110dp"
                 android:layout_marginTop="20.0dip"
                 android:layout_marginBottom="20.0dip"
-                android:background="@color/overlay_light_90"
+                android:background="@color/overlay_dark_90"
                 android:orientation="horizontal" />
 
 

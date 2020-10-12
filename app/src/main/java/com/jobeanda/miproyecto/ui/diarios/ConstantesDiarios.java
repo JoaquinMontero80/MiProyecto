@@ -18,7 +18,8 @@ public class ConstantesDiarios
     public final static String URL_LAINFORMACION = "https://www.lainformacion.com/";
     public final static String URL_ELINDEPENDIENTE = "https://www.elindependiente.com/";
     public final static String URL_ELCONFIDENCIAL = "https://www.elconfidencial.com/";
-    public final static String URL_TELEPRENSA = "https://www.teleprensa.com/";
+    public final static String URL_LIBERTADDIGITAL = "https://www.libertaddigital.com/";
+
 
     // REGIONALES
     public final static String URL_LAVANGUARDIA = "https://www.lavanguardia.com/";
@@ -91,13 +92,26 @@ public class ConstantesDiarios
     public final static String URL_SUPERDEPORTE = "https://www.superdeporte.es/";
     public final static String URL_ESTADIODEPORTIVO = "https://www.estadiodeportivo.com/";
     public final static String URL_MUNDODEPORTIVO = "https://www.mundodeportivo.com/";
+    public final static String URL_DIARIOGOL ="https://www.diariogol.com/";
+    public final static String URL_ELDESMARQUE ="https://eldesmarque.com/actualidad/";
+    public final static String URL_DEFENSACENTRAL ="https://www.defensacentral.com/";
+    public final static String URL_FCBARCELONANOTICIAS ="https://www.fcbarcelonanoticias.com/";
+    public final static String URL_MUCHODEPORTE ="https://www.muchodeporte.com/";
+    public final static String URL_AUPAATLETIC ="https://www.aupaathletic.com/home";
+    public final static String URL_DEPORTEVALENCIANO ="http://www.deportevalenciano.com/";
+    public final static String URL_CORDOBADEPORTES ="https://cordobadeporte.com/";
+    public final static String URL_DIARIOLAGRADA ="https://www.lagradaonline.com/";
+    public final static String URL_FUTBOLASTURIANO ="https://www.futbolasturiano.es/";
+    public final static String URL_LACOLINANERVION ="https://www.lacolinadenervion.com/";
+    public final static String URL_PASIONZARAGOZISTA ="http://www.pasionzaragocista.com/";
 
 
     // TECNOLOGIA
     public final static String URL_GENBETA = "https://www.genbeta.com/";
     public final static String URL_XATAKA = "https://www.xataka.com/";
     public final static String URL_ANDROIDLIBRE = "https://elandroidelibre.elespanol.com/";
-    public final static String URL_TECNOGEEK = "https://www.tecnogeek.com/";final static String URL_ECOSUNCHALES_WEB = "http://www.elecodesunchales.com.ar";
+    public final static String URL_TECNOGEEK = "https://www.tecnogeek.com/";
+    public final static String URL_ECOSUNCHALES_WEB = "http://www.elecodesunchales.com.ar";
     public final static String URL_APPLEESFERA = "https://www.applesfera.com/";
     public final static String URL_PUNTOGEEK = "https://www.puntogeek.com/";
     public final static String URL_HOBBYCONSOLAS = "https://www.hobbyconsolas.com/";
@@ -110,11 +124,12 @@ public class ConstantesDiarios
     public final static String URL_OHMYMAG = "OHMYMAG";
     public final static String URL_POPROSA = "https://www.poprosa.com/";
     public final static String URL_ELHUFFPOST = "https://www.huffingtonpost.es/";
-    public final static String URL_ENELBRASERO = "http://www.enelbrasero.com/";
 
     // MODA
     public final static String URL_VOGUE = "https://www.vogue.es/";
     public final static String URL_ELLE = "https://www.elle.com/es/";
     public final static String URL_FASHIONUNITED = "https://fashionunited.es/";
+    public final static String URL_SHARPEICO = "https://sharpeico.com/";
+
 
 }
