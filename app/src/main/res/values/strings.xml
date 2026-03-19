@@ -14,6 +14,7 @@
     <string name="texto_pantalla_principal">Diarios y noticias de España</string>
     <string name="diarios">Diarios de España</string>
     <string name="noticias">Noticias de España</string>
+    <string name="filtrado_noticia">Filtrar noticias</string>
     <string name="favoritos">Favoritos</string>
     <string name="configuracion">Configuración</string>
     <string name="acerca">Acerca de</string>

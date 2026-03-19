@@ -13,6 +13,10 @@
             android:icon="@drawable/noticias"
             android:title="@string/noticias" />
         <item
+            android:id="@+id/nav_newsapi"
+            android:icon="@drawable/noticias"
+            android:title="@string/filtrado_noticia" />
+        <item
             android:id="@+id/nav_favoritos"
             android:icon="@drawable/ic_favorites"
             android:title="@string/favoritos" />
@@ -24,9 +28,6 @@
             android:id="@+id/nav_acerca"
             android:icon="@drawable/acerca"
             android:title="@string/acerca" />
-        <item
-            android:id="@+id/nav_newsapi"
-            android:icon="@drawable/noticias"
-            android:title="NewsAPI" />
+
     </group>
 </menu>

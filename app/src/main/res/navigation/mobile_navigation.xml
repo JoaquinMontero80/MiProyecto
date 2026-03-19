@@ -36,6 +36,11 @@
     <fragment
         android:id="@+id/nav_newsapi"
         android:name="com.jobeanda.miproyecto.ui.newsApi.NewsApiFragment"
-        android:label="NewsAPI"
+        android:label="Filtrar noticias"
         tools:layout="@layout/fragment_news_api" />
+    <fragment
+        android:id="@+id/nav_newsapi_results"
+        android:name="com.jobeanda.miproyecto.ui.newsApi.NewsApiResultsFragment"
+        android:label="Resultados NewsAPI"
+        tools:layout="@layout/fragment_news_api_results" />
 </navigation>

@@ -1,89 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/spacing_medium"
-    android:layout_marginLeft="@dimen/spacing_middle"
-    android:layout_marginRight="@dimen/spacing_middle"
-    android:layout_marginTop="65dp"
-    android:visibility="visible"
-    app:cardCornerRadius="30dp"
-    app:cardElevation="20dp"
-    app:cardBackgroundColor="@color/light_green_50"
-    tools:context=".ui.noticias.ActividadNoticias">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:text="@string/titulo"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/fecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/fecha"
+            android:textColor="#666666" />
+
+
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/nada"
+            android:scaleType="centerCrop"
+            android:src="@drawable/noticias" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/spacing_large">
-
-
-            <View
-                android:layout_width="@dimen/spacing_large"
-                android:layout_height="0dp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/titulo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:text="@string/titulo"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="@color/ic_launcher_background"
-                    android:textStyle="bold"
-                    android:fontFamily="sans-serif-light"/>
-
-                <TextView
-                    android:id="@+id/fecha"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_small"
-                    android:gravity="center_vertical"
-                    android:text="@string/fecha"
-                    android:textColor="#3F51B5"
-                    android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-        <!--
-                            <TextView
-                                android:id="@+id/descripcion"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="@dimen/spacing_large"
-                                android:layout_marginLeft="@dimen/spacing_large"
-                                android:layout_marginRight="@dimen/spacing_large"
-                                android:text="blablabla"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                android:textColor="#99000000" />
-        -->
-        <ImageView
-            android:id="@+id/imagen"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/mapa"
-            android:contentDescription="@string/nada" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageButton
@@ -91,19 +55,19 @@
                 android:layout_width="?attr/actionBarSize"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/nada"
                 android:tint="#E53935"
-                app:srcCompat="@drawable/ic_favorites"
-                android:contentDescription="@string/nada" />
+                app:srcCompat="@drawable/ic_favorites" />
 
             <ImageButton
                 android:id="@+id/botonCompartir"
                 android:layout_width="?attr/actionBarSize"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/nada"
                 android:tint="#000000"
                 app:srcCompat="@drawable/ic_share"
-                tools:ignore="VectorDrawableCompat"
-                android:contentDescription="@string/nada"/>
+                tools:ignore="VectorDrawableCompat" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/appcompatbutton"
@@ -112,12 +76,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:text="VER NOTICIA COMPLETA" />
-
+                android:text="Abrir noticia"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
+
 
     </LinearLayout>
 
