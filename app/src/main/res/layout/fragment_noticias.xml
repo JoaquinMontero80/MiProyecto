@@ -10,7 +10,7 @@
     android:layout_marginRight="@dimen/spacing_middle"
     android:layout_marginTop="65dp"
     android:visibility="visible"
-    app:cardCornerRadius="50dp"
+    app:cardCornerRadius="30dp"
     app:cardElevation="20dp"
     app:cardBackgroundColor="@color/light_green_50"
     tools:context=".ui.noticias.ActividadNoticias">
@@ -42,9 +42,10 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:text="@string/titulo"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/blue_A700"
-                    android:textStyle="bold"/>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/ic_launcher_background"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-light"/>
 
                 <TextView
                     android:id="@+id/fecha"
@@ -53,7 +54,7 @@
                     android:layout_marginTop="@dimen/spacing_small"
                     android:gravity="center_vertical"
                     android:text="@string/fecha"
-                    android:textColor="#000000"
+                    android:textColor="#3F51B5"
                     android:textStyle="bold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
 
@@ -86,12 +87,12 @@
             android:orientation="horizontal">
 
             <ImageButton
+                android:id="@+id/botonFavoritos"
                 android:layout_width="?attr/actionBarSize"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:tint="#000000"
+                android:tint="#E53935"
                 app:srcCompat="@drawable/ic_favorites"
-                tools:ignore="VectorDrawableCompat"
                 android:contentDescription="@string/nada" />
 
             <ImageButton

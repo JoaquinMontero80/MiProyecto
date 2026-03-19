@@ -1,6 +1,7 @@
 package com.jobeanda.miproyecto.ui.noticias;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;

@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity
         // Pasando cada ID de menú como un conjunto de ID porque cada
         // menú debe considerarse como destinos de primer nivel.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_diarios, R.id.nav_noticias, R.id.nav_configuracion,  R.id.nav_acerca)
+                R.id.nav_diarios, R.id.nav_noticias, R.id.nav_favoritos, R.id.nav_configuracion,  R.id.nav_acerca)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

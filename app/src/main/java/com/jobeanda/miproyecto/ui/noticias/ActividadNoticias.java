@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TableLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -32,7 +31,7 @@ public class ActividadNoticias extends Fragment
         tab_layout = (TabLayout) root.findViewById(R.id.tab_layout);
 
         // Instancia la clase TableLayout, para añadir en la parte baja, el desplegable de opciones
-        //TabLayout tablelayout = new TableLayout(view_pager, tab_layout);
+        TableLayout tablelayout = new TableLayout(view_pager, tab_layout);
 
 
         // Instancia clase LectoRss ( constructor recibe Context ), le paso el RecyclerView

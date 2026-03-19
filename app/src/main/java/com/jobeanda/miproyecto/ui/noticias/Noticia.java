@@ -1,5 +1,7 @@
 package com.jobeanda.miproyecto.ui.noticias;
 
+import java.util.Date;
+
 public class Noticia
 {
     String titulo;
@@ -7,6 +9,15 @@ public class Noticia
     //String descripcion;
     String url_imagen;
     String fecha;
+    private Date fechaDate;
+
+    public Date getFechaDate() {
+        return fechaDate;
+    }
+
+    public void setFechaDate(Date fechaDate) {
+        this.fechaDate = fechaDate;
+    }
 
 
     public String getTitulo() {

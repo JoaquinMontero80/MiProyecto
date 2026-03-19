@@ -18,6 +18,12 @@
         tools:layout="@layout/fragment_noticias" />
 
     <fragment
+        android:id="@+id/nav_favoritos"
+        android:name="com.jobeanda.miproyecto.ui.noticias.FavoritosFragment"
+        android:label="@string/favoritos"
+        tools:layout="@layout/fragment_favoritos" />
+
+    <fragment
         android:id="@+id/nav_configuracion"
         android:name="com.jobeanda.miproyecto.ui.configuracion.ConfiguracionFragment"
         android:label="@string/menu_slideshow"

@@ -2,6 +2,7 @@ package com.jobeanda.miproyecto.ui.noticias;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,9 +10,13 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.gson.Gson;
 import com.jobeanda.miproyecto.R;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
@@ -24,11 +29,17 @@ public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyView
     // ArrayList donde recojo las noticias
     ArrayList<Noticia> noticias;
     Context contexto;
+    boolean modoFavoritos;
 
     // Constructor
     public AdapterNoticias(ArrayList<Noticia> noticias, Context contexto) {
+        this(noticias, contexto, false);
+    }
+
+    public AdapterNoticias(ArrayList<Noticia> noticias, Context contexto, boolean modoFavoritos) {
         this.noticias = noticias;
         this.contexto = contexto;
+        this.modoFavoritos = modoFavoritos;
     }
 
     @NonNull
@@ -48,6 +59,54 @@ public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyView
         // Obtiene la noticia que tiene el constructor
         final Noticia actual = noticias.get(position);
         holder.titulo.setText(actual.getTitulo());
+
+        /* FAVORITOS */
+        // Estado inicial del icono
+        final FavoritosManager favoritosManager = new FavoritosManager(contexto);
+        final MyViewHolder finalHolder = holder;
+
+        // Estado inicial del icono
+        if (modoFavoritos) {
+            holder.botonFavoritos.setImageResource(R.drawable.ic_favorites_filled);
+        } else {
+            if (favoritosManager.esFavorito(actual)) {
+                holder.botonFavoritos.setImageResource(R.drawable.ic_favorites_filled);
+            } else {
+                holder.botonFavoritos.setImageResource(R.drawable.ic_favorites);
+            }
+        }
+
+        holder.botonFavoritos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // SI ESTOY EN LA PANTALLA DE FAVORITOS, BORRAR SIEMPRE
+                if (modoFavoritos) {
+                    favoritosManager.eliminarFavorito(actual);
+
+                    int pos = finalHolder.getAdapterPosition();
+                    if (pos != RecyclerView.NO_POSITION) {
+                        noticias.remove(pos);
+                        notifyItemRemoved(pos);
+                        notifyItemRangeChanged(pos, noticias.size());
+                    }
+
+                    Toast.makeText(contexto, "Eliminado de favoritos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // SI ESTOY EN LA LISTA NORMAL, HACER TOGGLE
+                if (favoritosManager.esFavorito(actual)) {
+                    favoritosManager.eliminarFavorito(actual);
+                    finalHolder.botonFavoritos.setImageResource(R.drawable.ic_favorites);
+                    Toast.makeText(contexto, "Eliminado de favoritos", Toast.LENGTH_SHORT).show();
+                } else {
+                    favoritosManager.guardarFavorito(actual);
+                    finalHolder.botonFavoritos.setImageResource(R.drawable.ic_favorites_filled);
+                    Toast.makeText(contexto, "Añadido a favoritos", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         // Creo un metodo para corregir el etiquetado de la descripcion
         //holder.descripcion.setText(corregirDescripcion(actual.getDescripcion()));
@@ -142,26 +201,33 @@ public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyView
     // Corrige fecha
     public String corregirFecha(String s)
     {
-        // "s" es lo que le esta entrando por parametros
-        String descripcionOriginal = s;
+        try {
+            // Formato original del RSS
+            java.text.SimpleDateFormat formatoEntrada =
+                    new java.text.SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", java.util.Locale.ENGLISH);
 
-        String separador = "0200";
-        // Array de String que divide en partes la etiqueta y el texto
-        String[] partes = descripcionOriginal.split(separador);
+            // Convertimos el String a Date
+            java.util.Date fecha = formatoEntrada.parse(s);
 
-        // Devuelve parte [1]
-        String devolver = partes[0];
+            // Formato de salida en español
+            java.text.SimpleDateFormat formatoSalida =
+                    new java.text.SimpleDateFormat("EEEE, dd MMM yyyy HH:mm:ss", new java.util.Locale("es", "ES"));
 
-        // devuelve la parte que me interesa ( posicion 1 del array )
-        return devolver;
-    }
+            return formatoSalida.format(fecha);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return s; // devuelve la original si falla
+        }
+     }
+
 //  =========================================================================================
     // Clase ViewHolder
     public class MyViewHolder extends RecyclerView.ViewHolder
     {
         // Referencia a las variables del CardView ( mostradas en RecyclerView )
         TextView titulo, descripcion, fecha;
-        ImageView imagen, botonCompartir;
+        ImageView imagen, botonCompartir, botonFavoritos;
         AppCompatButton appcompatbutton;
 
         public MyViewHolder(@NonNull View itemView)
@@ -175,6 +241,7 @@ public class AdapterNoticias extends RecyclerView.Adapter<AdapterNoticias.MyView
             imagen = (ImageView) itemView.findViewById(R.id.imagen);
             appcompatbutton = (AppCompatButton)itemView.findViewById(R.id.appcompatbutton);
             botonCompartir = (ImageButton) itemView.findViewById(R.id.botonCompartir);
+            botonFavoritos = (ImageButton) itemView.findViewById(R.id.botonFavoritos);
         }
     }
 }

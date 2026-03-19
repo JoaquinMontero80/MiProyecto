@@ -15,14 +15,19 @@ import org.w3c.dom.NodeList;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 
-public class LectorRss extends AsyncTask<Void, Void, Void>
-{
+public class LectorRss extends AsyncTask<Void, Void, Void> {
     // Creo ArrayList donde voy a añadir los atributos de clase Noticia
     ArrayList<Noticia> noticias = new ArrayList<>();
 
@@ -31,7 +36,9 @@ public class LectorRss extends AsyncTask<Void, Void, Void>
     RecyclerView recyclerview;
 
     // Direccion del feed
-    String direccion = "https://www.20minutos.es/rss/";
+    //String direccion = "https://www.20minutos.es/rss/";
+    String[] direccion = {"https://www.20minutos.es/rss/", "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada",
+            "https://www.eldiario.es/rss", "https://www.cope.es/api/es/news/rss.xml", "https://euroweeklynews.com/feed/" };
     // Trabajar con la red
     URL url;
     ProgressDialog progressDialog;
@@ -45,7 +52,6 @@ public class LectorRss extends AsyncTask<Void, Void, Void>
     }
 
 
-
     @Override
     protected void onPreExecute() {
         // Miestras carga, muestralo
@@ -57,6 +63,18 @@ public class LectorRss extends AsyncTask<Void, Void, Void>
     protected void onPostExecute(Void aVoid) {
         // Cierra el cargado
         progressDialog.dismiss();
+
+        // Ordenar noticias por fecha: más nueva primero
+        Collections.sort(noticias, new Comparator<Noticia>() {
+            @Override
+            public int compare(Noticia n1, Noticia n2) {
+                if (n1.getFechaDate() == null && n2.getFechaDate() == null) return 0;
+                if (n1.getFechaDate() == null) return 1;
+                if (n2.getFechaDate() == null) return -1;
+                return n2.getFechaDate().compareTo(n1.getFechaDate());
+            }
+        });
+
         // Instancia el adaptador y le pasa los 2 parametros de su constructor ( ArrayList y Context )
         AdapterNoticias adaptadorNoticias = new AdapterNoticias(noticias, context);
         // Crea el estilo de RecyclerView
@@ -67,102 +85,134 @@ public class LectorRss extends AsyncTask<Void, Void, Void>
 
     @Override
     protected Void doInBackground(Void... voids) {
-        procesarXML(obtenerDatos());
+        List<Document> documentos = obtenerDatos(direccion);
+
+        for (Document doc : documentos) {
+            if (doc != null) {
+                procesarXML(doc);
+            }
+        }
+
         return null;
     }
 
-    private void procesarXML(Document data)
-    {
-        if(data!=null)
-        {
-            // Introducimos en un Nodo toda la documentación del RSS
-            Element root = data.getDocumentElement();
-            Node channel = root.getChildNodes().item(1);
-            // Almaceno en variable todos los item del rss
-            NodeList items = channel.getChildNodes();
+    private void procesarXML(Document data) {
+        if (data == null) return;
 
-            // Recorro los item
-            for(int i=0; i<items.getLength(); i++)
-            {
-                Node hijoActual = items.item(i);
-                // Si el componente por el que navegamos tiene la etiqueta item
-                if(hijoActual.getNodeName().equalsIgnoreCase("item"))
-                {
-                    //Instancia objeto Noticia
-                    Noticia noticia = new Noticia();
-                    // Almacenamos lo que contiene la noticia de 1 item
-                    NodeList itemsChild = hijoActual.getChildNodes();
-                    // Recorremos el item de la noticia
-                    for(int j=0; j<itemsChild.getLength(); j++)
-                    {
-                        Node actual = itemsChild.item(j);
+        // Busca directamente todos los items del feed
+        NodeList items = data.getElementsByTagName("item");
 
-                        // Si es igual a titulo
-                        if(actual.getNodeName().equalsIgnoreCase("title"))
-                        {
-                            noticia.setTitulo(actual.getTextContent());
-                        } // link
-                        else if(actual.getNodeName().equalsIgnoreCase("link"))
-                        {
-                            noticia.setEnlace(actual.getTextContent());
-                        } // Descripcion ( content:encoded ) se llama
-             /*           else if(actual.getNodeName().equalsIgnoreCase("content:encoded"))
-                        {
-                            noticia.setDescripcion(actual.getTextContent());
-                        } // URL a imagen*/
-                        else if(actual.getNodeName().equalsIgnoreCase("media:content"))
-                        {
-                            //noticia.setUrl_imagen(actual.getTextContent());
-                            // El enlace de la imagen, dentro del item, tiene varios atributos
-                            // Voy a necesitar el tercero(posicion 2) que es la URL.  ( https://www.20minutos.es/rss/ )
-                            String miUrl = actual.getAttributes().item(1).getTextContent();
-                            noticia.setUrl_imagen(miUrl);
-                        } // Fecha publicacion
-                        else if(actual.getNodeName().equalsIgnoreCase("pubDate"))
-                        {
-                            noticia.setFecha(actual.getTextContent());
-                        }
+        for (int i = 0; i < items.getLength(); i++) {
+            Node itemNode = items.item(i);
 
-                    } // Fin de for interno(j)
+            if (itemNode.getNodeType() != Node.ELEMENT_NODE) continue;
 
-                    // Añado los elementos al ArrayList
-                    noticias.add(noticia);
-                    // Log.d("title", noticia.getTitulo());
-                    // Log.d("link", noticia.getEnlace());
-                    // Log.d("content:encoded", noticia.getDescripcion());
-                    // Log.d("media:content", noticia.getUrl_imagen());
-                    // Log.d("pubDate", noticia.getFecha());
+            Element itemElement = (Element) itemNode;
+            Noticia noticia = new Noticia();
+
+            // Título
+            NodeList titleList = itemElement.getElementsByTagName("title");
+            if (titleList.getLength() > 0) {
+                noticia.setTitulo(titleList.item(0).getTextContent());
+            }
+
+            // Enlace
+            NodeList linkList = itemElement.getElementsByTagName("link");
+            if (linkList.getLength() > 0) {
+                noticia.setEnlace(linkList.item(0).getTextContent());
+            }
+
+            // Fecha
+            NodeList pubDateList = itemElement.getElementsByTagName("pubDate");
+            if (pubDateList.getLength() > 0) {
+
+                String fechaStr = pubDateList.item(0).getTextContent();
+
+                // Mantienes esto (para mostrar)
+                noticia.setFecha(fechaStr);
+
+                // Añades esto (para ordenar)
+                try {
+                    SimpleDateFormat formato =
+                            new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.ENGLISH);
+
+                    Date fechaDate = formato.parse(fechaStr);
+                    noticia.setFechaDate(fechaDate);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-            } // Fin de for principal(i)
+            }
 
-        } // Fin de if principal
+            // Imagen: 20minutos -> enclosure
+            NodeList enclosureList = itemElement.getElementsByTagName("enclosure");
+            if (enclosureList.getLength() > 0) {
+                Element enclosure = (Element) enclosureList.item(0);
+                String urlImagen = enclosure.getAttribute("url");
+                if (urlImagen != null && !urlImagen.isEmpty()) {
+                    noticia.setUrl_imagen(urlImagen);
+                }
+            }
 
-    } // Fin de metodo procesarXML
+            // Imagen: El País -> media:content
+            if (noticia.getUrl_imagen() == null || noticia.getUrl_imagen().isEmpty()) {
+                NodeList mediaList = itemElement.getElementsByTagName("media:content");
+                if (mediaList.getLength() > 0) {
+                    Element media = (Element) mediaList.item(0);
+                    String urlImagen = media.getAttribute("url");
+                    if (urlImagen != null && !urlImagen.isEmpty()) {
+                        noticia.setUrl_imagen(urlImagen);
+                    }
+                }
+            }
+
+            noticias.add(noticia);
+        }
+    }
 
 
     // Metodo obtener los datos del FEED
-    public Document obtenerDatos()
-    {
-        try
-        {
-            // Inicializo URL con la direccion del FEED
-            url = new URL(direccion);
-            // Conexion
-            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-            // Asigno el tipo de conexion que va a ser, ( get --> obtener datos )
-            connection.setRequestMethod("GET");
-            // Procesa la peticion
-            InputStream inputStream = connection.getInputStream();
-            DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder builder = builderFactory.newDocumentBuilder();
-            Document xmlDoc = builder.parse(inputStream);
-            return xmlDoc;
-        }
-        catch(Exception e){
-            e.printStackTrace();
-            return null;
+    public List<Document> obtenerDatos(String[] direcciones) {
+        List<Document> documentos = new ArrayList<>();
+
+        for (String direccion : direcciones) {
+            HttpURLConnection connection = null;
+            InputStream inputStream = null;
+
+            try {
+                URL url = new URL(direccion);
+                connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
+                connection.setConnectTimeout(10000);
+                connection.setReadTimeout(10000);
+
+                inputStream = connection.getInputStream();
+
+                DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+                builderFactory.setNamespaceAware(true);
+
+                DocumentBuilder builder = builderFactory.newDocumentBuilder();
+                Document xmlDoc = builder.parse(inputStream);
+                xmlDoc.getDocumentElement().normalize();
+
+                documentos.add(xmlDoc);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (inputStream != null) inputStream.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                if (connection != null) {
+                    connection.disconnect();
+                }
+            }
         }
 
-    } // Fin de metodo obtenerDatos
+        return documentos;
+    }
 
 }

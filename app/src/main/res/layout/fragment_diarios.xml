@@ -7,186 +7,191 @@
     android:background="@color/overlay_dark_90"
     tools:context=".ui.diarios.ActividadDiarios">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
-
-        <LinearLayout
-            android:layout_marginTop="80dp"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_marginTop="80dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16.0sp"
-                android:layout_marginRight="16.0sp"
-                android:text="@string/generales"
-                android:textColor="#FFFFFF"
-                android:textSize="34.0sp"
-                android:textStyle="bold" />
+                android:orientation="vertical">
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="3.0dip"
-                android:background="#FFFFFF"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.0sp"
+                    android:layout_marginRight="16.0sp"
+                    android:text="@string/generales"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34.0sp"
+                    android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerviewGenerales"
-                android:layout_width="wrap_content"
-                android:layout_height="110dp"
-                android:layout_marginTop="20.0dip"
-                android:layout_marginBottom="20.0dip"
-                android:background="@color/overlay_dark_90"
-                android:orientation="horizontal" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="3.0dip"
+                    android:background="#FFFFFF"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16.0sp"
-                android:layout_marginRight="16.0sp"
-                android:text="@string/regionales"
-                android:textColor="#FFFFFF"
-                android:textSize="34.0sp"
-                android:textStyle="bold" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerviewGenerales"
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="20.0dip"
+                    android:layout_marginBottom="20.0dip"
+                    android:background="@color/overlay_dark_90"
+                    android:orientation="horizontal" />
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="3.0dip"
-                android:background="#FFFFFF"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.0sp"
+                    android:layout_marginRight="16.0sp"
+                    android:text="@string/regionales"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34.0sp"
+                    android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerviewRegionales"
-                android:layout_width="wrap_content"
-                android:layout_height="110dp"
-                android:layout_marginTop="20.0dip"
-                android:layout_marginBottom="20.0dip"
-                android:background="@color/overlay_dark_90"
-                android:orientation="horizontal" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="3.0dip"
+                    android:background="#FFFFFF"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16.0sp"
-                android:layout_marginRight="16.0sp"
-                android:text="@string/economia"
-                android:textColor="#FFFFFF"
-                android:textSize="34.0sp"
-                android:textStyle="bold" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerviewRegionales"
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="20.0dip"
+                    android:layout_marginBottom="20.0dip"
+                    android:background="@color/overlay_dark_90"
+                    android:orientation="horizontal" />
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="3.0dip"
-                android:background="#FFFFFF"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.0sp"
+                    android:layout_marginRight="16.0sp"
+                    android:text="@string/economia"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34.0sp"
+                    android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerviewEconomia"
-                android:layout_width="wrap_content"
-                android:layout_height="110dp"
-                android:layout_marginTop="20.0dip"
-                android:layout_marginBottom="20.0dip"
-                android:background="@color/overlay_dark_90"
-                android:orientation="horizontal" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="3.0dip"
+                    android:background="#FFFFFF"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16.0sp"
-                android:layout_marginRight="16.0sp"
-                android:text="@string/deportes"
-                android:textColor="#FFFFFF"
-                android:textSize="34.0sp"
-                android:textStyle="bold" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerviewEconomia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="20.0dip"
+                    android:layout_marginBottom="20.0dip"
+                    android:background="@color/overlay_dark_90"
+                    android:orientation="horizontal" />
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="3.0dip"
-                android:background="#FFFFFF"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.0sp"
+                    android:layout_marginRight="16.0sp"
+                    android:text="@string/deportes"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34.0sp"
+                    android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerviewDeportes"
-                android:layout_width="wrap_content"
-                android:layout_height="110dp"
-                android:layout_marginTop="20.0dip"
-                android:layout_marginBottom="20.0dip"
-                android:background="@color/overlay_dark_90"
-                android:orientation="horizontal" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="3.0dip"
+                    android:background="#FFFFFF"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16.0sp"
-                android:layout_marginRight="16.0sp"
-                android:text="@string/tecnologia"
-                android:textColor="#FFFFFF"
-                android:textSize="34.0sp"
-                android:textStyle="bold" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerviewDeportes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="20.0dip"
+                    android:layout_marginBottom="20.0dip"
+                    android:background="@color/overlay_dark_90"
+                    android:orientation="horizontal" />
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="3.0dip"
-                android:background="#FFFFFF"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.0sp"
+                    android:layout_marginRight="16.0sp"
+                    android:text="@string/tecnologia"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34.0sp"
+                    android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerviewTecnologia"
-                android:layout_width="wrap_content"
-                android:layout_height="110dp"
-                android:layout_marginTop="20.0dip"
-                android:layout_marginBottom="20.0dip"
-                android:background="@color/overlay_dark_90"
-                android:orientation="horizontal" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="3.0dip"
+                    android:background="#FFFFFF"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16.0sp"
-                android:layout_marginRight="16.0sp"
-                android:text="@string/celebridades"
-                android:textColor="#FFFFFF"
-                android:textSize="34.0sp"
-                android:textStyle="bold" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerviewTecnologia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="20.0dip"
+                    android:layout_marginBottom="20.0dip"
+                    android:background="@color/overlay_dark_90"
+                    android:orientation="horizontal" />
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="3.0dip"
-                android:background="#FFFFFF"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.0sp"
+                    android:layout_marginRight="16.0sp"
+                    android:text="@string/celebridades"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34.0sp"
+                    android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerviewCelebridades"
-                android:layout_width="wrap_content"
-                android:layout_height="110dp"
-                android:layout_marginTop="20.0dip"
-                android:layout_marginBottom="20.0dip"
-                android:background="@color/overlay_dark_90"
-                android:orientation="horizontal" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="3.0dip"
+                    android:background="#FFFFFF"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16.0sp"
-                android:layout_marginRight="16.0sp"
-                android:text="@string/moda"
-                android:textColor="#FFFFFF"
-                android:textSize="34.0sp"
-                android:textStyle="bold" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerviewCelebridades"
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="20.0dip"
+                    android:layout_marginBottom="20.0dip"
+                    android:background="@color/overlay_dark_90"
+                    android:orientation="horizontal" />
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="3.0dip"
-                android:background="#FFFFFF"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.0sp"
+                    android:layout_marginRight="16.0sp"
+                    android:text="@string/moda"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34.0sp"
+                    android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerviewModa"
-                android:layout_width="wrap_content"
-                android:layout_height="110dp"
-                android:layout_marginTop="20.0dip"
-                android:layout_marginBottom="20.0dip"
-                android:background="@color/overlay_dark_90"
-                android:orientation="horizontal" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="3.0dip"
+                    android:background="#FFFFFF"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerviewModa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="20.0dip"
+                    android:layout_marginBottom="20.0dip"
+                    android:background="@color/overlay_dark_90"
+                    android:orientation="horizontal" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100.0dip"
+                    android:background="@color/overlay_dark_90"/>
 
 
-        </LinearLayout>
-    </ScrollView>
+            </LinearLayout>
+        </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
