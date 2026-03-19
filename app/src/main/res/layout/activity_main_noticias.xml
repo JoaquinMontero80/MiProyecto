@@ -12,6 +12,9 @@
             android:id="@+id/recyclerNoticias"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:scrollbars="vertical"
+            android:scrollingCache="true"
+            android:paddingTop="?attr/actionBarSize"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 </LinearLayout>

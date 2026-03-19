@@ -116,6 +116,7 @@ public class LectorRss extends AsyncTask<Void, Void, Void> {
                 noticia.setTitulo(titleList.item(0).getTextContent());
             }
 
+
             // Enlace
             NodeList linkList = itemElement.getElementsByTagName("link");
             if (linkList.getLength() > 0) {
