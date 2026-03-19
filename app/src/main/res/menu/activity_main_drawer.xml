@@ -24,5 +24,9 @@
             android:id="@+id/nav_acerca"
             android:icon="@drawable/acerca"
             android:title="@string/acerca" />
+        <item
+            android:id="@+id/nav_newsapi"
+            android:icon="@drawable/noticias"
+            android:title="NewsAPI" />
     </group>
 </menu>
