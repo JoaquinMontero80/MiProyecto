@@ -1,18 +1,26 @@
 package com.jobeanda.miproyecto.ui.newsApi;
 
+<<<<<<< HEAD
 import android.app.DatePickerDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+=======
+import android.os.Bundle;
+import android.text.TextUtils;
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+<<<<<<< HEAD
 import android.widget.LinearLayout;
+=======
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -24,6 +32,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+<<<<<<< HEAD
 import com.google.android.material.chip.ChipGroup;
 import com.jobeanda.miproyecto.R;
 
@@ -31,6 +40,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
+=======
+import com.jobeanda.miproyecto.R;
+
+import java.util.ArrayList;
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -38,6 +52,7 @@ import retrofit2.Response;
 
 public class NewsApiFragment extends Fragment {
 
+<<<<<<< HEAD
     private static final String PREFS_NAME = "newsapi_filters";
     private static final String KEY_MODO = "modo";
     private static final String KEY_QUERY = "query";
@@ -53,6 +68,8 @@ public class NewsApiFragment extends Fragment {
     private static final String KEY_TO = "to";
     private static final String KEY_PAGE_SIZE = "page_size";
 
+=======
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
     private Spinner spinnerModo;
     private Spinner spinnerCategoria;
     private Spinner spinnerIdioma;
@@ -69,6 +86,7 @@ public class NewsApiFragment extends Fragment {
     private ProgressBar progressBar;
     private RecyclerView recyclerView;
     private TextView tvEmpty;
+<<<<<<< HEAD
     private TextView tvValidation;
     private Button btnAplicar;
     private Button btnLimpiar;
@@ -84,6 +102,13 @@ public class NewsApiFragment extends Fragment {
     private NewsApiAdapter adapter;
     private final ArrayList<NewsArticle> articles = new ArrayList<>();
     private final SimpleDateFormat apiDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+=======
+    private Button btnAplicar;
+    private Button btnLimpiar;
+
+    private NewsApiAdapter adapter;
+    private final ArrayList<NewsArticle> articles = new ArrayList<>();
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
 
     @Nullable
     @Override
@@ -98,11 +123,15 @@ public class NewsApiFragment extends Fragment {
         initViews(view);
         setupSpinners();
         setupRecycler();
+<<<<<<< HEAD
         setupDatePickers();
         setupActions();
         restoreFilters();
         actualizarVisibilidadSegunModo();
         validarFiltros(false);
+=======
+        setupActions();
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
         cargarNoticias();
     }
 
@@ -123,6 +152,7 @@ public class NewsApiFragment extends Fragment {
         progressBar = view.findViewById(R.id.progressNewsApi);
         recyclerView = view.findViewById(R.id.recyclerNewsApi);
         tvEmpty = view.findViewById(R.id.tvNewsApiEmpty);
+<<<<<<< HEAD
         tvValidation = view.findViewById(R.id.tvValidationMessage);
         btnAplicar = view.findViewById(R.id.btnAplicarFiltros);
         btnLimpiar = view.findViewById(R.id.btnLimpiarFiltros);
@@ -133,12 +163,17 @@ public class NewsApiFragment extends Fragment {
         chipGroupPais = view.findViewById(R.id.chipGroupPais);
         chipGroupIdioma = view.findViewById(R.id.chipGroupIdioma);
         chipGroupSortBy = view.findViewById(R.id.chipGroupSortBy);
+=======
+        btnAplicar = view.findViewById(R.id.btnAplicarFiltros);
+        btnLimpiar = view.findViewById(R.id.btnLimpiarFiltros);
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
     }
 
     private void setupSpinners() {
         setSpinnerItems(spinnerModo, new String[]{"top-headlines", "everything"});
         setSpinnerItems(spinnerCategoria, new String[]{"", "business", "entertainment", "general", "health", "science", "sports", "technology"});
         setSpinnerItems(spinnerIdioma, new String[]{"", "ar", "de", "en", "es", "fr", "he", "it", "nl", "no", "pt", "ru", "sv", "ud", "zh"});
+<<<<<<< HEAD
         setSpinnerItems(spinnerPais, new String[]{"", "ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cu", "cz", "de", "eg", "es", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it", "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "us", "ve", "za"});
         setSpinnerItems(spinnerSortBy, new String[]{"", "publishedAt", "relevancy", "popularity"});
         setSpinnerItems(spinnerSearchIn, new String[]{"", "title", "description", "content", "title,description", "title,content", "description,content", "title,description,content"});
@@ -149,6 +184,17 @@ public class NewsApiFragment extends Fragment {
         spinnerIdioma.setSelection(findPosition(spinnerIdioma, "es"));
         spinnerSortBy.setSelection(findPosition(spinnerSortBy, "publishedAt"));
         spinnerSearchIn.setSelection(0);
+=======
+        setSpinnerItems(spinnerPais, new String[]{"", "ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cu", "cz", "de", "eg", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it", "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "us", "ve", "za"});
+        setSpinnerItems(spinnerSortBy, new String[]{"", "publishedAt", "relevancy", "popularity"});
+        setSpinnerItems(spinnerSearchIn, new String[]{"", "title", "description", "content", "title,description", "title,content", "description,content", "title,description,content"});
+
+        spinnerModo.setSelection(0);
+        spinnerPais.setSelection(findPosition(spinnerPais, "us"));
+        spinnerCategoria.setSelection(findPosition(spinnerCategoria, "general"));
+        spinnerIdioma.setSelection(findPosition(spinnerIdioma, "es"));
+        spinnerSortBy.setSelection(findPosition(spinnerSortBy, "publishedAt"));
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
         etPageSize.setText("20");
     }
 
@@ -158,6 +204,7 @@ public class NewsApiFragment extends Fragment {
         recyclerView.setAdapter(adapter);
     }
 
+<<<<<<< HEAD
     private void setupDatePickers() {
         etFrom.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -205,14 +252,19 @@ public class NewsApiFragment extends Fragment {
         dialog.show();
     }
 
+=======
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
     private void setupActions() {
         btnAplicar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if (!validarFiltros(true)) {
                     return;
                 }
                 guardarFiltros();
+=======
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
                 cargarNoticias();
             }
         });
@@ -227,15 +279,20 @@ public class NewsApiFragment extends Fragment {
         spinnerModo.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(android.widget.AdapterView<?> parent, View view, int position, long id) {
+<<<<<<< HEAD
                 sincronizarChipsConSpinnerModo();
                 actualizarVisibilidadSegunModo();
                 validarFiltros(false);
+=======
+                actualizarVisibilidadSegunModo();
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
             }
 
             @Override
             public void onNothingSelected(android.widget.AdapterView<?> parent) {
             }
         });
+<<<<<<< HEAD
 
         spinnerCategoria.setOnItemSelectedListener(simpleItemSelectedListener(new Runnable() {
             @Override
@@ -373,12 +430,17 @@ public class NewsApiFragment extends Fragment {
             public void onNothingSelected(android.widget.AdapterView<?> parent) {
             }
         };
+=======
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
     }
 
     private void actualizarVisibilidadSegunModo() {
         boolean esEverything = "everything".equals(getSelectedValue(spinnerModo));
+<<<<<<< HEAD
         layoutTopHeadlines.setVisibility(esEverything ? View.GONE : View.VISIBLE);
         layoutEverything.setVisibility(esEverything ? View.VISIBLE : View.GONE);
+=======
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
         spinnerCategoria.setEnabled(!esEverything);
         spinnerPais.setEnabled(!esEverything);
         spinnerIdioma.setEnabled(esEverything);
@@ -398,6 +460,7 @@ public class NewsApiFragment extends Fragment {
         etFrom.setText("");
         etTo.setText("");
         etPageSize.setText("20");
+<<<<<<< HEAD
         spinnerModo.setSelection(findPosition(spinnerModo, "top-headlines"));
         spinnerCategoria.setSelection(findPosition(spinnerCategoria, "general"));
         spinnerIdioma.setSelection(findPosition(spinnerIdioma, "es"));
@@ -406,10 +469,19 @@ public class NewsApiFragment extends Fragment {
         spinnerSearchIn.setSelection(0);
         clearValidation();
         guardarFiltros();
+=======
+        spinnerModo.setSelection(0);
+        spinnerCategoria.setSelection(findPosition(spinnerCategoria, "general"));
+        spinnerIdioma.setSelection(findPosition(spinnerIdioma, "es"));
+        spinnerPais.setSelection(findPosition(spinnerPais, "us"));
+        spinnerSortBy.setSelection(findPosition(spinnerSortBy, "publishedAt"));
+        spinnerSearchIn.setSelection(0);
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
         actualizarVisibilidadSegunModo();
         cargarNoticias();
     }
 
+<<<<<<< HEAD
     private boolean validarFiltros(boolean mostrarToast) {
         String modo = getSelectedValue(spinnerModo);
         String query = etQuery.getText().toString().trim();
@@ -494,6 +566,9 @@ public class NewsApiFragment extends Fragment {
             return;
         }
 
+=======
+    private void cargarNoticias() {
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
         progressBar.setVisibility(View.VISIBLE);
         tvEmpty.setVisibility(View.GONE);
 
@@ -581,6 +656,7 @@ public class NewsApiFragment extends Fragment {
         tvEmpty.setVisibility(View.VISIBLE);
     }
 
+<<<<<<< HEAD
     private void guardarFiltros() {
         SharedPreferences preferences = requireContext().getSharedPreferences(PREFS_NAME, 0);
         preferences.edit()
@@ -683,6 +759,8 @@ public class NewsApiFragment extends Fragment {
         }
     }
 
+=======
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
     private void setSpinnerItems(Spinner spinner, String[] items) {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, items);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

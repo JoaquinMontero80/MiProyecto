@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     xmlns:app="http://schemas.android.com/apk/res-auto"
+=======
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="12dp">
 
     <ScrollView
+<<<<<<< HEAD
         android:id="@+id/scrollFiltrosNewsApi"
+=======
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fillViewport="true">
@@ -20,6 +26,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:text="Explora NewsAPI"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -61,17 +68,28 @@
                     android:layout_height="wrap_content"
                     android:text="Everything" />
             </com.google.android.material.chip.ChipGroup>
+=======
+                android:text="Filtros NewsAPI"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingBottom="8dp" />
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
 
             <Spinner
                 android:id="@+id/spinnerModo"
                 android:layout_width="match_parent"
+<<<<<<< HEAD
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp" />
+=======
+                android:layout_height="wrap_content" />
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
 
             <EditText
                 android:id="@+id/etQuery"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:layout_marginTop="10dp"
                 android:hint="Búsqueda (q)"
                 android:inputType="text" />
@@ -340,11 +358,87 @@
                         android:inputType="none" />
                 </LinearLayout>
             </LinearLayout>
+=======
+                android:layout_marginTop="8dp"
+                android:hint="Búsqueda (q)"
+                android:inputType="text" />
+
+            <Spinner
+                android:id="@+id/spinnerCategoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerIdioma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerPais"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerSortBy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerSearchIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <EditText
+                android:id="@+id/etSources"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Sources (bbc-news, abc-news...)"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/etDomains"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Domains (techcrunch.com, bbc.co.uk...)"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/etExcludeDomains"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Exclude domains"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/etFrom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Desde (yyyy-MM-dd)"
+                android:inputType="date" />
+
+            <EditText
+                android:id="@+id/etTo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Hasta (yyyy-MM-dd)"
+                android:inputType="date" />
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
 
             <EditText
                 android:id="@+id/etPageSize"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:layout_marginTop="12dp"
                 android:hint="Número de noticias (1-100)"
                 android:inputType="number" />
@@ -357,6 +451,12 @@
                 android:textColor="#B00020"
                 android:visibility="gone" />
 
+=======
+                android:layout_marginTop="8dp"
+                android:hint="Número de noticias (1-100)"
+                android:inputType="number" />
+
+>>>>>>> ff8deb57e68caa0f86afd272c6e8bd7a5ba5cb22
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
